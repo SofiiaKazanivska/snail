@@ -10,23 +10,15 @@ public class Snail {
         int b = x.nextInt();
         int h = x.nextInt();
 
-        int current_height = 0;
-        int days = 1;
-
-        if ( b >= a && h > a) {
+        if ((a == b && a > h) || (a > b && a > h) || (a < b && a >= h)) {
+            int total = 1;
+            System.out.println(total);
+        } else if (a > b && a < h) {
+            int days = (1 + (h - b - 1)) / (a - b);
+            System.out.println(days);
+        } else {
             System.out.println("Impossible");
         }
 
-        while (current_height != h) {
-            current_height += a;
-
-            if(current_height >= h)
-                break;
-
-                days += 1;
-                current_height -= b;
-            }
-
-        System.out.println(days);
-        }
     }
+}
